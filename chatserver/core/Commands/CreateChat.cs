@@ -3,7 +3,7 @@ using MediatR;
 
 namespace core.Commands;
 
-public class CreateChat:IRequest<ChatInfo>
+public class CreateChat:IRequest<ChatInfo?>
 {
   public string Name { get; set; }
 }
