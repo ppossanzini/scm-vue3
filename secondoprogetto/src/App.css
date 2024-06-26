@@ -1,0 +1,58 @@
+.app {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 5fr 1fr;
+  grid-template-rows: 100px 1fr;
+  background-color: white;
+  color: black;
+}
+
+header {
+  grid-column: 1;
+  grid-row: 1;
+  background-color: rgba(100, 100, 100, 0.3);
+  flex-flow: row nowrap;
+}
+
+aside {
+  grid-column: 2;
+  grid-row: 1/-1;
+  background-color: rgba(100, 100, 100, 0.3);
+}
+
+section {
+  grid-column: 1;
+  grid-row: 2;
+  font-size: 16px;
+}
+
+section table {
+  width: 100%;
+}
+
+section table thead tr {
+  border-bottom: 1px gray;
+}
+
+section table tbody tr:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+}
+
+aside,
+header,
+details {
+  display: flex;
+  flex-flow: column;
+  padding: 1rem;
+}
+
+#app,
+body,
+document,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
