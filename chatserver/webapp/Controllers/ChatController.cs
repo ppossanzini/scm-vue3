@@ -14,9 +14,8 @@ public class ChatController(IMediator mediator) : ControllerBase
   public async Task<IActionResult> CreateChat(string name)
   {
     var c = await mediator.Send(new CreateChat() { Name = name });
-
-    if (c is not null)
-      Console.Write(c.Name);
     return Ok(c);
   }
+  
+  
 }
