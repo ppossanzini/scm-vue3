@@ -1,5 +1,6 @@
 using core.Commands;
 using core.dto;
+using core.Notifications;
 using core.Query;
 using handlers.Model;
 using MediatR;
@@ -16,7 +17,10 @@ public class ChatCommands(DB db, IMediator mediator): IRequestHandler<CreateChat
 
     await db.SaveChangesAsync(cancellationToken);
 
-    return await mediator.Send(new GetChat() { Id = c.Id },cancellationToken);
+    
+    var result =  await mediator.Send(new GetChat() { Id = c.Id },cancellationToken);
+    await mediator.Publish(new ChatCreated() { Model = result });
+    return result;
     // return new ChatInfo()
     // {
     //   Id = c.Id, CreationDate = c.CreationDate, Name = c.Name
