@@ -6,7 +6,6 @@ export default defineComponent({
   components: { historyElement },
   setup() {
 
-    const thtml = ref('<div>ciao</div>');
 
     const partial = ref(0);
     const tot = ref(0);
@@ -49,7 +48,7 @@ export default defineComponent({
 
     return {
       tot, addnumber, isDecimal, operation, calculate,
-      currentOperation, partial, thtml
+      currentOperation, partial
     }
   }
 

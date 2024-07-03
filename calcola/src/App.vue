@@ -5,8 +5,6 @@
     <span v-if="currentOperation">{{partial}} ({{currentOperation}})</span>
     {{ tot }}
 
-    <span v-html="thtml"></span>
-
     <section :style="{width: `${tot}px`}" 
              :class="{rotate: currentOperation == 'x'}"
              
@@ -32,9 +30,9 @@
     <button @click="operation('/')" class="div">/</button>
   </main>
   <aside>
-    <history-element :name="test">
+    <history-element>
       <button>Clear</button>
-      <template v-slot:partial slot-scope="{name}">{{partial}} {{name}}</template>
+      <template v-slot:partial>{{partial}} </template>
       <template v-slot:total>{{tot}}</template>
     </history-element>
 
