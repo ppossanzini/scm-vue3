@@ -12,6 +12,21 @@
 section {
   display: grid;
   grid-template-columns: 1fr 50px 1fr;
+
+}
+
+section span{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+section span:first-child{
+  justify-content: flex-start;
+}
+
+section span:last-child{
+  justify-content: flex-end;
 }
 
 </style>
